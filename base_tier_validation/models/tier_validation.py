@@ -648,7 +648,7 @@ class TierValidation(models.AbstractModel):
                         ("company_id", "in", [False] + self.env.company.ids),
                         ("id", "not in", rec.review_ids.mapped("definition_id").ids),
                     ],
-                    order="sequence desc",
+                    order="sequence",
                 )
                 sequence = 0
                 for td in tier_definitions:
